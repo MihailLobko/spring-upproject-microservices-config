@@ -19,6 +19,9 @@ spring:
       # Override configuration with any local property source
       override-none: true
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
     open-in-view: false
     hibernate:
       ddl-auto: none
