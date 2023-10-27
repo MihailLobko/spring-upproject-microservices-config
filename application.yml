@@ -24,7 +24,7 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
     open-in-view: false
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
 
 # Spring Boot 1.5 makes actuator secure by default
 management.security.enabled: false
@@ -84,8 +84,9 @@ spring:
     url: jdbc:mysql://mysqldb:3306/petclinic?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: petclinic
+    initialization-mode: always
   sql:
     init:
       schema-locations: classpath*:db/mysql/schema.sql
       data-locations: classpath*:db/mysql/data.sql
-      init: ALWAYS
+      mode: ALWAYS
